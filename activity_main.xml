@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/emoji_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🐶"
+        android:textSize="48sp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/animal_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="কুকুর"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tap_instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ট্যাপ করুন পাঠ্য বোঝার জন্য"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:marginTop="32dp"/>
+
+</LinearLayout>
