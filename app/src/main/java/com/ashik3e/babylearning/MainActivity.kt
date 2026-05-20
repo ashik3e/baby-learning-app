@@ -10,11 +10,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var animalNameText: TextView
     private lateinit var nextButton: Button
     private lateinit var scoreText: TextView
-    private lateinit var soundManager: SoundManager
     
     private var currentEmojiIndex = 0
     private var score = 0
-    private val emojiList = EmojiDatabase.getEmojiList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,13 +23,10 @@ class MainActivity : AppCompatActivity() {
         nextButton = findViewById(R.id.nextButton)
         scoreText = findViewById(R.id.score_text)
         
-        soundManager = SoundManager(this)
-        
         displayEmoji(currentEmojiIndex)
         updateScore()
         
         emojiDisplay.setOnClickListener {
-            playEmojiSound()
             incrementScore()
         }
         
@@ -41,22 +36,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun displayEmoji(index: Int) {
-        if (emojiList.isNotEmpty()) {
-            val emoji = emojiList[index]
-            emojiDisplay.text = emoji.englishName
-            animalNameText.text = emoji.bengaliName
-        }
-    }
-
-    private fun playEmojiSound() {
-        if (emojiList.isNotEmpty()) {
-            val emoji = emojiList[currentEmojiIndex]
-            soundManager.playSound(emoji.soundResourceId)
+        val emojis = listOf(
+            Pair("🐶", "কুকুর"),
+            Pair("🐱", "বিড়াল"),
+            Pair("🐭", "ইঁদুর"),
+            Pair("🐹", "হ্যামস্টার"),
+            Pair("🐰", "খরগোশ"),
+            Pair("🦊", "শিয়াল"),
+            Pair("🐻", "ভালুক"),
+            Pair("🐼", "পান্ডা"),
+            Pair("🐨", "কোয়ালা"),
+            Pair("🐯", "বাঘ")
+        )
+        
+        if (index < emojis.size) {
+            emojiDisplay.text = emojis[index].first
+            animalNameText.text = emojis[index].second
         }
     }
 
     private fun nextEmoji() {
-        currentEmojiIndex = (currentEmojiIndex + 1) % emojiList.size
+        currentEmojiIndex = (currentEmojiIndex + 1) % 10
         displayEmoji(currentEmojiIndex)
     }
 
@@ -67,10 +67,5 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateScore() {
         scoreText.text = "স্কোর: $score"
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        soundManager.release()
     }
 }
