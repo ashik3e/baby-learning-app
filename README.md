@@ -15,28 +15,35 @@
 - **Language**: Kotlin
 - **Minimum SDK**: 21
 - **Target SDK**: 33
-- **Build Tool**: Gradle
+- **Build Tool**: Gradle 7.5
 - **CI/CD**: GitHub Actions
 
 ## ইনস্টলেশন 📥
 
-1. Repository Clone করুন:
+### Local এ চালান:
 ```bash
 git clone https://github.com/ashik3e/baby-learning-app.git
+cd baby-learning-app
+./gradlew assembleDebug
 ```
 
-2. Android Studio এ খুলুন
+### APK ডাউনলোড করুন:
+1. [GitHub Actions](https://github.com/ashik3e/baby-learning-app/actions) এ যান
+2. সবচেয়ে সাম্প্রতিক সফল "Build APK" রান খুঁজুন
+3. Artifacts থেকে `app-debug-apk` ডাউনলোড করুন
+4. APK ফাইল আনজিপ করে ইনস্টল করুন
 
-3. Gradle Sync করুন
-
-4. অ্যাপ চালান বা APK বিল্ড করুন
+### Emulator এ চালান:
+```bash
+adb install app/build/outputs/apk/debug/app-debug.apk
+```
 
 ## GitHub Actions 🚀
 
 এই প্রজেক্টে স্বয়ংক্রিয় APK বিল্ডিং সক্ষম:
-- প্রতি Push এ APK তৈরি হয়
-- Artifacts এ ডাউনলোডযোগ্য
-- Release Tag দিলে স্বয়ংক্রিয় রিলিজ
+- ✅ প্রতি Push এ APK তৈরি হয়
+- ✅ Artifacts এ ডাউনলোডযোগ্য (৩০ দিনের জন্য)
+- ✅ Release Tag দিলে স্বয়ংক্রিয় রিলিজ তৈরি হয়
 
 ## ফাইল স্ট্রাকচার 📁
 
@@ -44,15 +51,15 @@ git clone https://github.com/ashik3e/baby-learning-app.git
 baby-learning-app/
 ├── .github/
 │   └── workflows/
-│       └── build.yml
+│       └── build.yml                # GitHub Actions Workflow
 ├── app/
 │   ├── src/
 │   │   ├── main/
 │   │   │   ├── java/
 │   │   │   │   └── com/ashik3e/babylearning/
-│   │   │   │       ├── MainActivity.kt
-│   │   │   │       ├── EmojiItem.kt
-│   │   │   │       └── SoundManager.kt
+│   │   │   │       ├── MainActivity.kt       # Main Activity
+│   │   │   │       ├── EmojiItem.kt          # Data Model
+│   │   │   │       └── SoundManager.kt       # Audio Manager
 │   │   │   ├── res/
 │   │   │   │   ├── layout/
 │   │   │   │   │   └── activity_main.xml
@@ -60,15 +67,41 @@ baby-learning-app/
 │   │   │   │   │   ├── colors.xml
 │   │   │   │   │   └── strings.xml
 │   │   │   │   └── raw/
+│   │   │   │       └── (sound files)
 │   │   │   └── AndroidManifest.xml
+│   │   └── test/
 │   └── build.gradle
+├── gradle/
+│   └── wrapper/
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── build.gradle
+├── settings.gradle
+├── gradle.properties
 ├── .gitignore
 └── README.md
 ```
 
+## ডেভেলপমেন্ট 💻
+
+### প্রয়োজনীয় টুলস:
+- Android Studio 4.0+
+- JDK 11+
+- Gradle 7.5+
+
+### প্রজেক্ট চালান:
+1. Android Studio এ খুলুন
+2. Gradle Sync করুন
+3. Run 'app' বাটনে ক্লিক করুন
+
 ## অবদান রাখুন 🤝
 
-Pull Request সবসময় স্বাগত!
+Pull Request সবসময় স্বাগত! বড় পরিবর্তনের জন্য প্রথমে একটি Issue খুলুন।
+
+## লাইসেন্স 📄
+
+এই প্রজেক্ট MIT লাইসেন্সের অধীন।
 
 ## যোগাযোগ 📧
 
@@ -79,3 +112,4 @@ Pull Request সবসময় স্বাগত!
 ---
 
 **Made with ❤️ for babies learning** 👶
+**Last Updated**: 2026-05-20
