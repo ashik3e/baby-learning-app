@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="baby_blue">#A0D3E8</color>
+    <color name="baby_pink">#F4A7B9</color>
+    <color name="sunny_yellow">#FCE57C</color>
+    <color name="grass_green">#A8D86D</color>
+    <color name="soft_orange">#FFCCB3</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>
