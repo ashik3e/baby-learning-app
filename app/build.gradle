@@ -4,17 +4,17 @@ plugins {
 }
 
 android {
-    namespace "com.ashik3e.babylearning"
-    compileSdk 33
+    namespace 'com.ashik3e.babylearning'
+    compileSdk 34
 
     defaultConfig {
-        applicationId "com.ashik3e.babylearning"
+        applicationId 'com.ashik3e.babylearning'
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 1
-        versionName "1.0"
+        versionName '1.0.0'
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     buildTypes {
@@ -35,16 +35,12 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
-
-    buildFeatures {
-        viewBinding false
-    }
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     
     testImplementation 'junit:junit:4.13.2'

@@ -1,11 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Baby Learning Emoji Game</string>
-    <string name="tap_emoji">ইমোজি ট্যাপ করুন</string>
-    <string name="next_button">পরবর্তী</string>
-    <string name="title">শিশুদের খেলা</string>
-    <string name="animal_name">প্রাণীর নাম</string>
-    <string name="emoji_description">Emoji Display</string>
-    <string name="instructions">খেলার নিয়ম: ইমোজিতে ট্যাপ করে শব্দ শুনুন</string>
-    <string name="score">স্কোর</string>
-    <string name="level">লেভেল</string>
+    <string name="app_name">Baby Learning</string>
 </resources>
